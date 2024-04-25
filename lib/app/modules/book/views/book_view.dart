@@ -86,7 +86,7 @@ class BookView extends GetView<BookController> {
                         color: const Color(0xFFF5F5F5).withOpacity(0.60),
                         borderRadius: BorderRadius.circular(10)
                     ),
-                    height: 150,
+                    height: 165,
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -151,7 +151,7 @@ class BookView extends GetView<BookController> {
                                     color: Colors.black,
                                     fontSize: 12.0,
                                   ),
-                                  maxLines: 3,
+                                  maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                                 FittedBox(

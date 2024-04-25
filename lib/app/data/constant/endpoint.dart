@@ -10,4 +10,5 @@ class Endpoint {
 
   // Book
   static const String book = "${baseUrlApi}admin/buku";
+  static const String kategori = "${baseUrlApi}admin/kategori";
 }
