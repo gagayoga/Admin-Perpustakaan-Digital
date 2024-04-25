@@ -27,7 +27,7 @@ class AddbookView extends GetView<AddbookController> {
       body: SizedBox(
         width: sizes.sizeWidth,
         height: sizes.sizeHeight,
-        child:  kontenAddBook(),
+        child:  SingleChildScrollView(child: kontenAddBook()),
       )
     );
   }
@@ -59,234 +59,234 @@ class AddbookView extends GetView<AddbookController> {
           height: 10,
         ),
 
-        SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Form(
-              key: controller.formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                      "Judul Buku",
-                    style: GoogleFonts.lato(
-                      fontWeight: FontWeight.w700,
-                      color: Colors.grey,
-                      fontSize: 14,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Form(
+            key: controller.formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                    "Judul Buku",
+                  style: GoogleFonts.lato(
+                    fontWeight: FontWeight.w700,
+                    color: Colors.grey,
+                    fontSize: 14,
+                  ),
+                ),
+
+                CustomTextField(
+                    controller: controller.judul,
+                    hinText: "Masukan judul buku",
+                    obsureText: false
+                ),
+
+                const SizedBox(height: 10),
+
+                Text(
+                  "Deskripsi Buku",
+                  style: GoogleFonts.lato(
+                    fontWeight: FontWeight.w700,
+                    color: Colors.grey,
+                    fontSize: 14,
+                  ),
+                ),
+
+                CustomTextField(
+                    controller: controller.deskripsi,
+                    maxlines: 5,
+                    hinText: "Masukan deskripsi buku",
+                    obsureText: false
+                ),
+
+                const SizedBox(height: 10),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Penulis Buku",
+                            style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.grey,
+                              fontSize: 14,
+                            ),
+                          ),
+
+                          CustomTextField(
+                              controller: controller.penulis,
+                              maxlines: 1,
+                              hinText: "Masukan penulis buku",
+                              obsureText: false
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Penerbit Buku",
+                            style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.grey,
+                              fontSize: 14,
+                            ),
+                          ),
 
-                  CustomTextField(
-                      controller: controller.judul,
-                      hinText: "Masukan judul buku",
-                      obsureText: false
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  Text(
-                    "Deskripsi Buku",
-                    style: GoogleFonts.lato(
-                      fontWeight: FontWeight.w700,
-                      color: Colors.grey,
-                      fontSize: 14,
+                          CustomTextField(
+                              controller: controller.penerbit,
+                              maxlines:1,
+                              hinText: "Masukan penerbit buku",
+                              obsureText: false
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-
-                  CustomTextField(
-                      controller: controller.deskripsi,
-                      maxlines: 5,
-                      hinText: "Masukan deskripsi buku",
-                      obsureText: false
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Penulis Buku",
-                              style: GoogleFonts.lato(
-                                fontWeight: FontWeight.w700,
-                                color: Colors.grey,
-                                fontSize: 14,
-                              ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Tahun Terbit",
+                            style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.grey,
+                              fontSize: 14,
                             ),
+                          ),
 
-                            CustomTextField(
-                                controller: controller.penulis,
-                                maxlines: 1,
-                                hinText: "Masukan penulis buku",
-                                obsureText: false
-                            ),
-                          ],
-                        ),
+                          CustomTextField(
+                              controller: controller.tahunterbit,
+                              maxlines:1,
+                              hinText: "Masukan tahun terbit",
+                              obsureText: false
+                          ),
+                        ],
                       ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Penerbit Buku",
-                              style: GoogleFonts.lato(
-                                fontWeight: FontWeight.w700,
-                                color: Colors.grey,
-                                fontSize: 14,
-                              ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Jumlah Halaman",
+                            style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.grey,
+                              fontSize: 14,
                             ),
+                          ),
 
-                            CustomTextField(
-                                controller: controller.penerbit,
-                                maxlines:1,
-                                hinText: "Masukan penerbit buku",
-                                obsureText: false
-                            ),
-                          ],
-                        ),
+                          CustomTextField(
+                              controller: controller.jumlahhalaman,
+                              maxlines:1,
+                              hinText: "Masukan jumlah halaman",
+                              obsureText: false
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Tahun Terbit",
-                              style: GoogleFonts.lato(
-                                fontWeight: FontWeight.w700,
-                                color: Colors.grey,
-                                fontSize: 14,
-                              ),
-                            ),
+                    ),
+                  ],
+                ),
 
-                            CustomTextField(
-                                controller: controller.tahunterbit,
-                                maxlines:1,
-                                hinText: "Masukan tahun terbit",
-                                obsureText: false
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Jumlah Halaman",
-                              style: GoogleFonts.lato(
-                                fontWeight: FontWeight.w700,
-                                color: Colors.grey,
-                                fontSize: 14,
-                              ),
-                            ),
+                const SizedBox(height: 10),
 
-                            CustomTextField(
-                                controller: controller.jumlahhalaman,
-                                maxlines:1,
-                                hinText: "Masukan jumlah halaman",
-                                obsureText: false
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  Obx(
-                        () => (controller.dataKategori.isNotEmpty)
-                        ? DropdownButtonFormField<DataKategori>(
-                          decoration: InputDecoration(
-                            fillColor: backgroundInput,
-                            filled: true,
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: colorBorder.withOpacity(0.90),
-                                ),
-                                borderRadius: BorderRadius.circular(10.10)),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: colorBorder.withOpacity(0.90),
-                                ),
-                                borderRadius: BorderRadius.circular(10.10)),
-                            errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: colorBorder.withOpacity(0.90),
-                                ),
-                                borderRadius: BorderRadius.circular(10.10)),
-                            border: OutlineInputBorder(
+                Obx(
+                      () => (controller.dataKategori.isNotEmpty)
+                      ? DropdownButtonFormField<DataKategori>(
+                        decoration: InputDecoration(
+                          fillColor: backgroundInput,
+                          filled: true,
+                          focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: colorBorder.withOpacity(0.90),
                               ),
-                              borderRadius: BorderRadius.circular(10.10),
+                              borderRadius: BorderRadius.circular(10.10)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: colorBorder.withOpacity(0.90),
+                              ),
+                              borderRadius: BorderRadius.circular(10.10)),
+                          errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: colorBorder.withOpacity(0.90),
+                              ),
+                              borderRadius: BorderRadius.circular(10.10)),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: colorBorder.withOpacity(0.90),
                             ),
-                            contentPadding:
-                            const EdgeInsets.symmetric(vertical: 13.0, horizontal: 10.0),
-                            hintText: "Pilih kategori buku",
-                            hintStyle: GoogleFonts.lato(
-                              color: Colors.grey,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600
-                            )
+                            borderRadius: BorderRadius.circular(10.10),
                           ),
-                      value: controller.selectedKategori.value,
-                      items: controller.dataKategori.map((kategori) {
-                        return DropdownMenuItem<DataKategori>(
-                          value: kategori,
-                          child: Text(kategori.namaKategori ?? "Kosong"),
-                        );
-                      }).toList(),
-                            onChanged: (selectedItem) {
-                              if (selectedItem != null) {
-                                controller.selectedKategori.value = selectedItem;
-                                print('ID Kategori: ${selectedItem.kategoriID}');
-                              }
-                            }
-
-                        )
-                        : const CircularProgressIndicator(),
-                  ),
-
-                  const SizedBox(height: 35),
-
-                  CustomButton(
-                      onPressed:
-                          (){
-                        controller.postBuku();
-                      },
-                      childWidget: Obx(() => controller.loading.value?
-                      const CircularProgressIndicator(
-                        color: Colors.white,
-                      ): Text(
-                        "Add Buku",
-                        style: GoogleFonts.roboto(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
+                          contentPadding:
+                          const EdgeInsets.symmetric(vertical: 13.0, horizontal: 10.0),
+                          hintText: "Pilih kategori buku",
+                          hintStyle: GoogleFonts.lato(
+                            color: Colors.grey,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600
+                          )
                         ),
-                      ))),
-                ],
-              ),
+                    value: controller.selectedKategori.value,
+                    items: controller.dataKategori.map((kategori) {
+                      return DropdownMenuItem<DataKategori>(
+                        value: kategori,
+                        child: Text(kategori.namaKategori ?? "Kosong"),
+                      );
+                    }).toList(),
+                          onChanged: (selectedItem) {
+                            if (selectedItem != null) {
+                              controller.idKategori = selectedItem.kategoriID!;
+                              controller.selectedKategori.value = selectedItem;
+                              print('ID Kategori: ${selectedItem.kategoriID}');
+                              print(controller.idKategori = selectedItem.kategoriID!);
+                            }
+                          }
+
+                      )
+                      : const CircularProgressIndicator(),
+                ),
+
+                const SizedBox(height: 35),
+
+                CustomButton(
+                    onPressed:
+                        (){
+                      controller.postBuku();
+                    },
+                    childWidget: Obx(() => controller.loading.value?
+                    const CircularProgressIndicator(
+                      color: Colors.white,
+                    ): Text(
+                      "Add Buku",
+                      style: GoogleFonts.roboto(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ))),
+              ],
             ),
           ),
         )

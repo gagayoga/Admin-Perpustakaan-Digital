@@ -55,7 +55,7 @@ class DashboardView extends GetView<DashboardController> {
 
             },
             "assets/home/fitur2.png",
-            "Pendataan Peminjaman",
+            "Data Peminjaman",
             "Data-data peminjaman buku perpustakaan"
         ),
       ],
@@ -96,7 +96,7 @@ class DashboardView extends GetView<DashboardController> {
                         style: GoogleFonts.lato(
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
-                            fontSize: 28
+                            fontSize: 26
                         ),
                       ),
                       const SizedBox(
@@ -107,7 +107,7 @@ class DashboardView extends GetView<DashboardController> {
                         style: GoogleFonts.lato(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 16
+                            fontSize: 14
                         ),
                       ),
                     ],

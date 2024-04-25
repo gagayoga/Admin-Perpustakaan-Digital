@@ -1,4 +1,5 @@
 import 'package:admin/app/data/models/response_kategori.dart';
+import 'package:admin/app/modules/book/controllers/book_controller.dart';
 import 'package:dio/dio.dart' as dio;
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class AddbookController extends GetxController with StateMixin{
   var selectedKategori = Rx<DataKategori?>(null);
   final loading = false.obs;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  var idKategori = 0;
 
 
   @override
@@ -85,12 +87,13 @@ class AddbookController extends GetxController with StateMixin{
                   "Penerbit": penerbit.text.toString(),
                   "TahunTerbit": tahunterbit.text.toString(),
                   "JumlahHalaman": jumlahhalaman.text.toString(),
-                  "id_kategori[]": selectedKategori.value,
+                  "id_kategori[]": idKategori,
                 }
             )
         );
         if (response.statusCode == 200) {
           Get.back();
+          Get.find<BookController>().getDataBook();
         } else {
           Get.snackbar("Sorry", "Login Gagal", backgroundColor: Colors.red);
         }
